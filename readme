@@ -1,0 +1,13 @@
+# js-primerのtodoアプリを自作してみる
+
+## ローカルサーバーでHTMLを確認する
+### todoapp/ディレクトリに移動する
+$ cd todoapp/
+
+### todoapp/をルートにしたローカルサーバーを起動する
+$ npx --yes @js-primer/local-server
+
+todoappのローカルサーバーを起動しました。
+次のURLをブラウザで開いてください。
+
+URL: http://localhost:3000
