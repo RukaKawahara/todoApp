@@ -96,11 +96,11 @@ body {
 
 .todo-list-label {
   cursor: pointer;
-  width: 50%;
 }
 
 .todo-todo_text_wrapper {
   display: inline;
+  word-break: break-all;
 }
 
 .todo-list-checkbox {
@@ -114,6 +114,7 @@ body {
   padding: 4px 24px;
   border-radius: 5px;
   cursor: pointer;
+  min-width: 80px;
 }
 
 .todo-delete-button:hover {
