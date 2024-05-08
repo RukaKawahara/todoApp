@@ -10,4 +10,4 @@ $ npx --yes @js-primer/local-server
 todoappのローカルサーバーを起動しました。
 次のURLをブラウザで開いてください。
 
-URL: http://localhost:3000
+URL: http://localhost:3000/public/

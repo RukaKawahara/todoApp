@@ -1,3 +1,5 @@
+console.log("function.jsが読み込まれています");
+
 const formElement = document.querySelector('#js-form');
 const inputElement = document.querySelector('#js-form-input');
 const todoCount = document.querySelector('#js-todo-length');
