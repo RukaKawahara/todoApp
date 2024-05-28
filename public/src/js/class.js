@@ -2,10 +2,10 @@ console.log("class.jsが読み込まれています");
 
 class Todo {
   // コンストラクタの定義
-  constructor() {
-    this.inputElement = document.querySelector('#js-form-input');
-    this.todoCount = document.querySelector('#js-todo-length');
-    this.todoItemListUl = document.querySelector('#js-todo-list-ul');
+  constructor(options) {
+    this.inputElement = options.inputElement;
+    this.todoCount = options.todoCount;
+    this.todoItemListUl = options.todoItemListUl;
     this.todoObject = {};
     this.todoListArray = [];
   }
@@ -105,7 +105,11 @@ class Todo {
 // /**
 //  * インスタンスを生成
 //  */
-const todo = new Todo();
+const todo = new Todo({
+  inputElement : document.querySelector('#js-form-input'),
+  todoCount : document.querySelector('#js-todo-length'),
+  todoItemListUl : document.querySelector('#js-todo-list-ul')
+});
 
 // /**
 //  * controller
