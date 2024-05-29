@@ -29,8 +29,6 @@ class Todo {
       checked: false,
     };
 
-    console.log(this.todoObject);
-
     this.todoListArray.push({...this.todoObject});
   }
 
