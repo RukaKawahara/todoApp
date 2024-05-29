@@ -23,7 +23,7 @@ class Todo {
       return;
     };
 
-    this.todoObject.text = inputText;
+    this.todoObject.text = inputText.trim();
     this.todoObject.id = new Date().getTime();
     this.todoObject.checked = false;
     this.todoListArray.push({...this.todoObject});

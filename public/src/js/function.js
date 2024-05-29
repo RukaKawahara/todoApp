@@ -16,7 +16,7 @@ const addTodo = () => {
     return;
   };
 
-  todo.text = inputText;
+  todo.text = inputText.trim();
   todo.id = new Date().getTime();
   todo.checked = false;
   todoListArray.push({...todo});

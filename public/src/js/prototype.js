@@ -33,7 +33,7 @@ Todo.prototype.addTodo = function() {
     return;
   };
 
-  self.todoObject.text = inputText;
+  self.todoObject.text = inputText.trim();
   self.todoObject.id = new Date().getTime();
   self.todoObject.checked = false;
   self.todoListArray.push({...self.todoObject});
