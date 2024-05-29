@@ -14,15 +14,9 @@ class Todo {
 
   /**
  * [addTodo todoを追加する]
+ * @param {string} inputText inputに入力されたテキスト
  */
-  addTodo() {
-    const inputText = this.inputElement.value.trim();
-
-    if(inputText === ''){
-      alert("タスクを入力してください");
-      return;
-    };
-
+  addTodo(inputText) {
     this.todoObject = {
       text: inputText,
       id: new Date().getTime(),
@@ -119,8 +113,17 @@ const todo = new Todo({
 //  */
 document.querySelector('#js-form').addEventListener('submit', (event) => {
   event.preventDefault();
+  // input要素の中身を取得
+  const inputText = todo.inputElement.value.trim();
+
+  // 入力されたテキストが空だったら処理から抜ける
+  if(inputText === ''){
+    alert("タスクを入力してください");
+    return;
+  };
+
   // データを生成
-  todo.addTodo();
+  todo.addTodo(inputText);
   // 追加するtodolistの見た目を作る
   todo.createTodo();
   // inputエリアを空にする

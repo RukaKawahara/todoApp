@@ -21,6 +21,7 @@ const Todo = function(options){
 
 /**
  * [addTodo todoを追加する]
+ * @param {string} inputText inputに入力されたテキスト
  */
 Todo.prototype.addTodo = function() {
   'use strict';
@@ -143,8 +144,17 @@ const todo = new Todo({
 //  */
 document.querySelector('#js-form').addEventListener('submit', (event) => {
   event.preventDefault();
+  // input要素の中身を取得
+  const inputText = todo.inputElement.value.trim();
+
+  // 入力されたテキストが空だったら処理から抜ける
+  if(inputText === ''){
+    alert("タスクを入力してください");
+    return;
+  };
+
   // データを生成
-  todo.addTodo();
+  todo.addTodo(inputText);
   // 追加するtodolistの見た目を作る
   todo.createTodo();
   // inputエリアを空にする

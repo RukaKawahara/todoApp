@@ -7,15 +7,11 @@ const todoItemListUl = document.querySelector('#js-todo-list-ul');
 let todo = {};
 let todoListArray = [];
 
-const addTodo = () => {
-  // input要素の中身を取得
-  const inputText = inputElement.value.trim();
-
-  if(inputText === ''){
-    alert("タスクを入力してください");
-    return;
-  };
-
+/**
+ * [addTodo todoを追加する]
+ * @param {string} inputText inputに入力されたテキスト
+ */
+const addTodo = (inputText) => {
   todo = {
     text: inputText,
     id: new Date().getTime(),
@@ -90,8 +86,17 @@ const updateTodoNum = () => {
 */
 formElement.addEventListener('submit', (event) => {
   event.preventDefault();
+  // input要素の中身を取得
+  const inputText = inputElement.value.trim();
+
+  // 入力されたテキストが空だったら処理から抜ける
+  if(inputText === ''){
+    alert("タスクを入力してください");
+    return;
+  };
+
   // データを生成
-  addTodo();
+  addTodo(inputText);
   // 追加するtodolistの見た目を作る
   createTodo(todo);
   // inputエリアを空にする
