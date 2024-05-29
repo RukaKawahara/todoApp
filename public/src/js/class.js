@@ -16,16 +16,21 @@ class Todo {
  * [addTodo todoを追加する]
  */
   addTodo() {
-    var inputText = this.inputElement.value;
+    var inputText = this.inputElement.value.trim();
 
-    if(inputText.trim() === ''){
+    if(inputText === ''){
       alert("タスクを入力してください");
       return;
     };
 
-    this.todoObject.text = inputText.trim();
-    this.todoObject.id = new Date().getTime();
-    this.todoObject.checked = false;
+    this.todoObject = {
+      text: inputText,
+      id: new Date().getTime(),
+      checked: false,
+    };
+
+    console.log(this.todoObject);
+
     this.todoListArray.push({...this.todoObject});
   }
 

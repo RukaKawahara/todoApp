@@ -9,16 +9,19 @@ let todoListArray = [];
 
 const addTodo = () => {
   // input要素の中身を取得
-  var inputText = inputElement.value;
+  var inputText = inputElement.value.trim();
 
-  if(inputText.trim() === ''){
+  if(inputText === ''){
     alert("タスクを入力してください");
     return;
   };
 
-  todo.text = inputText.trim();
-  todo.id = new Date().getTime();
-  todo.checked = false;
+  todo = {
+    text: inputText,
+    id: new Date().getTime(),
+    checked: false,
+  };
+
   todoListArray.push({...todo});
 }
 

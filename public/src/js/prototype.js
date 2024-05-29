@@ -26,16 +26,19 @@ Todo.prototype.addTodo = function() {
   'use strict';
 
   var self = this;
-  var inputText = self.inputElement.value;
+  var inputText = self.inputElement.value.trim();
 
-  if(inputText.trim() === ''){
+  if(inputText === ''){
     alert("タスクを入力してください");
     return;
   };
 
-  self.todoObject.text = inputText.trim();
-  self.todoObject.id = new Date().getTime();
-  self.todoObject.checked = false;
+  self.todoObject = {
+    text: inputText,
+    id: new Date().getTime(),
+    checked: false,
+  };
+
   self.todoListArray.push({...self.todoObject});
 }
 
