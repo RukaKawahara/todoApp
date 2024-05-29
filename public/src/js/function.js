@@ -9,7 +9,7 @@ let todoListArray = [];
 
 const addTodo = () => {
   // input要素の中身を取得
-  var inputText = inputElement.value.trim();
+  const inputText = inputElement.value.trim();
 
   if(inputText === ''){
     alert("タスクを入力してください");
@@ -66,14 +66,14 @@ const createTodo = (todo) => {
 
 const toggleChecked = (id) => {
   // データの更新
-  var foundIndex = todoListArray.findIndex(obj => obj.id == id);
+  const foundIndex = todoListArray.findIndex(obj => obj.id == id);
   if(foundIndex !== -1){
     todoListArray[foundIndex].checked = !todoListArray[foundIndex].checked;
   }
 }
 
 const deleteTodo = (id) => {
-  var dataListItems = document.querySelectorAll(`li[data-id="${id}"]`);
+  const dataListItems = document.querySelectorAll(`li[data-id="${id}"]`);
   dataListItems.forEach(item => item.remove());
   // データの更新
   const newtodoListArray = todoListArray.filter(todo => todo.id != id);

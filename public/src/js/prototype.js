@@ -7,10 +7,10 @@ console.log("prototype.jsが読み込まれています");
  * @param {Object} options.todoCount Todoアイテム数
  * @param {Object} options.todoItemListUl	todoListが表示されるul要素
  */
-var Todo = function(options){
+const Todo = function(options){
   'use strict';
 
-  var self = this;
+  const self = this;
 
   self.inputElement = options.inputElement;
   self.todoCount = options.todoCount;
@@ -25,8 +25,8 @@ var Todo = function(options){
 Todo.prototype.addTodo = function() {
   'use strict';
 
-  var self = this;
-  var inputText = self.inputElement.value.trim();
+  const self = this;
+  const inputText = self.inputElement.value.trim();
 
   if(inputText === ''){
     alert("タスクを入力してください");
@@ -48,7 +48,7 @@ Todo.prototype.addTodo = function() {
 Todo.prototype.createTodo = function() {
   'use strict';
 
-  var self = this;
+  const self = this;
   // checkboxのhtmlを生成する
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
@@ -94,10 +94,10 @@ Todo.prototype.createTodo = function() {
 Todo.prototype.toggleChecked = function(id) {
   'use strict';
 
-  var self = this;
+  const self = this;
 
   // データの更新
-  var foundIndex = self.todoListArray.findIndex(obj => obj.id == id);
+  const foundIndex = self.todoListArray.findIndex(obj => obj.id == id);
   if(foundIndex !== -1){
     self.todoListArray[foundIndex].checked = !self.todoListArray[foundIndex].checked;
   }
@@ -110,11 +110,11 @@ Todo.prototype.toggleChecked = function(id) {
 Todo.prototype.deleteTodo = function(id) {
   'use strict';
 
-  var self = this;
-  var dataListItems = document.querySelectorAll(`li[data-id="${id}"]`);
+  const self = this;
+  const dataListItems = document.querySelectorAll(`li[data-id="${id}"]`);
   dataListItems.forEach(item => item.remove());
   // データの更新
-  var newtodoListArray = self.todoListArray.filter(todo => todo.id != id);
+  const newtodoListArray = self.todoListArray.filter(todo => todo.id != id);
   self.todoListArray = [...newtodoListArray];
   todo.updateTodoNum();
 }
@@ -125,14 +125,14 @@ Todo.prototype.deleteTodo = function(id) {
 Todo.prototype.updateTodoNum = function() {
   'use strict';
 
-  var self = this;
+  const self = this;
   self.todoCount.textContent = self.todoListArray.length;
 }
 
 // /**
 //  * インスタンスを生成
 //  */
-var todo = new Todo({
+const todo = new Todo({
   inputElement : document.querySelector('#js-form-input'),
   todoCount : document.querySelector('#js-todo-length'),
   todoItemListUl : document.querySelector('#js-todo-list-ul'),

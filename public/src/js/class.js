@@ -16,7 +16,7 @@ class Todo {
  * [addTodo todoを追加する]
  */
   addTodo() {
-    var inputText = this.inputElement.value.trim();
+    const inputText = this.inputElement.value.trim();
 
     if(inputText === ''){
       alert("タスクを入力してください");
@@ -78,7 +78,7 @@ class Todo {
  * @param {string} id チェックされたtodoのid
  */
   toggleChecked(id) {
-    var foundIndex = this.todoListArray.findIndex(obj => obj.id == id);
+    const foundIndex = this.todoListArray.findIndex(obj => obj.id == id);
     if(foundIndex !== -1){
       this.todoListArray[foundIndex].checked = !this.todoListArray[foundIndex].checked;
     }
@@ -89,10 +89,10 @@ class Todo {
  * @param {string} id 削除されるtodoのid
  */
   deleteTodo(id) {
-    var dataListItems = document.querySelectorAll(`li[data-id="${id}"]`);
+    const dataListItems = document.querySelectorAll(`li[data-id="${id}"]`);
     dataListItems.forEach(item => item.remove());
     // データの更新
-    var newtodoListArray = this.todoListArray.filter(todo => todo.id != id);
+    const newtodoListArray = this.todoListArray.filter(todo => todo.id != id);
     this.todoListArray = [...newtodoListArray];
     this.updateTodoNum();
   }
