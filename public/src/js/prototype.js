@@ -72,16 +72,16 @@ Todo.prototype.createTodo = function() {
   label.prepend(checkbox);
 
   // <button>要素を生成
-  const button = document.createElement('button');
-  button.type = 'button';
-  button.dataset.id = self.todoObject.id;
-  button.textContent = "削除";
-  button.addEventListener('click', (e) => {
+  const deleteButton = document.createElement('button');
+  deleteButton.type = 'button';
+  deleteButton.dataset.id = self.todoObject.id;
+  deleteButton.textContent = "削除";
+  deleteButton.addEventListener('click', (e) => {
     todo.deleteTodo(e.target.dataset.id);
   })
 
   todoItem.appendChild(label);
-  todoItem.appendChild(button);
+  todoItem.appendChild(deleteButton);
 
   // <ul>に作った要素を格納
   self.todoItemListUl.appendChild(todoItem);
