@@ -73,7 +73,7 @@ const toggleChecked = (id) => {
 }
 
 const deleteTodo = (id) => {
-  const dataListItems = document.querySelectorAll(`li[data-id="${id}"]`);
+  const dataListItems = document.querySelector(`li[data-id="${id}"]`);
   dataListItems.forEach(item => item.remove());
   // データの更新
   const newtodoListArray = todoListArray.filter(todo => todo.id != id);
