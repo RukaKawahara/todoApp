@@ -112,8 +112,8 @@ Todo.prototype.deleteTodo = function(id) {
   'use strict';
 
   const self = this;
-  const dataListItems = document.querySelector(`li[data-id="${id}"]`);
-  dataListItems.forEach(item => item.remove());
+  const dataListItem = document.querySelector(`li[data-id="${id}"]`);
+  dataListItem.remove();
   // データの更新
   const newtodoListArray = self.todoListArray.filter(todo => todo.id != id);
   self.todoListArray = [...newtodoListArray];
