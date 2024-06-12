@@ -110,6 +110,7 @@ body {
 .todo-delete-button {
   color: #fff;
   background-color: #0084ff;
+  border: none;
   border-bottom: 5px solid #0055cc;
   padding: 4px 24px;
   border-radius: 5px;
