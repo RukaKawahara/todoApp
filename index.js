@@ -1,6 +1,7 @@
 const express = require('express');
 const pg = require("pg");
 const app = express();
+require('dotenv').config();
 
 // HTMLファイルをホストするディレクトリを指定する
 app.use(express.static('public/'));
@@ -17,7 +18,7 @@ const pool = new pg.Pool({
   user: process.env.USER,
   password: process.env.PASSWORD,
   database: process.env.DATABASE,
-  port: process.env.DB_PORT,
+  port: process.env.PORT,
 
   // Render.comのDBではSSLが求められる
   ssl: {
