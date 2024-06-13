@@ -72,6 +72,6 @@ app.post('/update/:id', async(req, res) => {
 });
 
 // ローカルサーバーを起動
-app.listen(port, ()=> {
+app.listen(8080, ()=> {
   console.log(`サーバーがポート8080でリッスン中です`);
 });
