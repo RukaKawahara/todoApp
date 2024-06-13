@@ -1,7 +1,7 @@
 const express = require('express');
 const pg = require("pg");
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 
 require('dotenv').config();
 
@@ -71,7 +71,7 @@ app.post('/update/:id', async(req, res) => {
   }
 });
 
-// // ローカルサーバーを起動
-// app.listen(8080, ()=> {
-//   console.log(`サーバーがポート8080でリッスン中です`);
-// });
+// ローカルサーバーを起動
+app.listen(port, ()=> {
+  console.log(`サーバーがポート8080でリッスン中です`);
+});
