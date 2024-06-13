@@ -1,6 +1,8 @@
 const express = require('express');
 const pg = require("pg");
 const app = express();
+const port = process.env.PORT || 4000;
+
 require('dotenv').config();
 
 // HTMLファイルをホストするディレクトリを指定する
