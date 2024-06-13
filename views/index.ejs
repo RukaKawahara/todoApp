@@ -29,7 +29,7 @@
         <li class="todo-list-li" data-id='<%= todo.id %>'>
           <label class="todo-list-label" for='<%= todo.id %>'>
             <!-- <form action="/update/<%= todo.id %>" method="post" class="myForm" id='<%= todo.id %>'> -->
-              <input type="checkbox" data-id='<%= todo.id %>' class="todo-list-checkbox js-todo-list-checkbox" name="checked" <%= todo.checked === 0 ? '' : 'checked' %>>
+              <input type="checkbox" data-id='<%= todo.id %>' class="todo-list-checkbox js-todo-list-checkbox" name="checked" <%= todo.checked === true ? 'checked' : '' %>>
             <!-- </form> -->
             <%= todo.text %>
           </label>
