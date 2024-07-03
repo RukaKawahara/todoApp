@@ -6,5 +6,5 @@ $ npm run dev
 todoappのローカルサーバーを起動しました。
 次のURLをブラウザで開いてください。
 
-URL: http://localhost:8080/
+URL: http://localhost:5432/
 
